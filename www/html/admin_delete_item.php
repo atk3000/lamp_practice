@@ -19,6 +19,7 @@ if(is_admin($user) === false){
 }
 
 $item_id = get_post('item_id');
+$token = get_post('token');
 
 if(is_valid_csrf_token($token)) {
 if(destroy_item($db, $item_id) === true){
@@ -26,6 +27,8 @@ if(destroy_item($db, $item_id) === true){
 } else {
   set_error('商品削除に失敗しました。');
 }
+} else {
+  set_error('不正な操作が行われました。');
 }
 
 
