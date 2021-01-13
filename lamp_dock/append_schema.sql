@@ -17,10 +17,9 @@ CREATE TABLE `ec_details` (
     `order_id` int(11) NOT NULL,
     `item_id` int(11) NOT NULL,
     `amount` int(11) NOT NULL,
-    `price` int(11) NOT NULL,
+    `price` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 ALTER TABLE `ec_details`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT,
-  ADD PRIMARY KEY (`order_id`),
+  ADD PRIMARY KEY ('order_id', 'item_id'),
   ADD KEY `item_id` (`item_id`);
