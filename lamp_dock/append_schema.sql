@@ -21,5 +21,5 @@ CREATE TABLE `ec_details` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 ALTER TABLE `ec_details`
-  ADD PRIMARY KEY ('order_id', 'item_id'),
+  ADD PRIMARY KEY (order_id, item_id),
   ADD KEY `item_id` (`item_id`);
