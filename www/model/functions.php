@@ -54,7 +54,7 @@ function get_errors(){
   set_session('__errors',  array());
   return $errors;
 }
-
+//エラーがあればtrueを返す。
 function has_error(){
   return isset($_SESSION['__errors']) && count($_SESSION['__errors']) !== 0;
 }
@@ -71,7 +71,7 @@ function get_messages(){
   set_session('__messages',  array());
   return $messages;
 }
-
+//セッションにユーザーidが保存されているかみる
 function is_logined(){
   return get_session('user_id') !== '';
 }
