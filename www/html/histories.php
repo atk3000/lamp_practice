@@ -14,7 +14,7 @@ if (is_logined() === false) {
 $db = get_db_connect();
 $user = get_login_user($db);
 
-f(is_admin($user) === false){
+if(is_admin($user) === false){
   $histories = get_user_histories($db,$user['user_id']);
 } else {
   $histories = get_manage_histories($db,$order_id['order_id']);

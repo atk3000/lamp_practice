@@ -20,7 +20,7 @@
         <tr>
           <td><?php print(h($history['order_id'])); ?></td>
           <td><?php print(h($history['created'])); ?></td>
-          <td></td>
+          <td><?php print(h($history['ordertotal'])); ?></td>
           <td></td>
           <td>
           <form method="post" action="">
@@ -31,27 +31,6 @@
           </td>
         </tr>
        <?php } ?>
-      </tbody>
-    </table>
-
-    <table>
-      <thead>
-        <tr>
-          <th>商品名</th>
-          <th>商品価格</th>
-          <th>購入数</th>
-          <th>小計</th>
-        </tr>
-      </thead>
-      <tbody>
-      <?php foreach($details as $detail){ ?>
-        <tr>
-          <td><?php print($detail['name']); ?></td>
-          <td><?php print($detail['price']); ?></td>
-          <td><?php print($detail['amount']); ?></td>
-          <td><?php print($detail['ordertotal']); ?></td>
-        </tr>
-      <?php } ?>
       </tbody>
     </table>
   </body>
