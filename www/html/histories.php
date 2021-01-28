@@ -17,7 +17,7 @@ $user = get_login_user($db);
 if(is_admin($user) === false){
   $histories = get_user_histories($db,$user['user_id']);
 } else {
-  $histories = get_manage_histories($db,$order_id['order_id']);
+  $histories = get_manage_histories($db);
 }
 
 
