@@ -8,10 +8,10 @@
 <body>
   <?php include VIEW_PATH . 'templates/header.php'; ?>
   <div class="container">
-    <h1>ログイン</h1>
+  <div class="panel panel-default">
+  <div class="panel-heading">ログイン</div>
 
     <?php include VIEW_PATH . 'templates/messages.php'; ?>
-
     <form method="post" action="login_process.php" class="login_form mx-auto">
       <div class="form-group">
         <label for="name">名前: </label>
@@ -23,6 +23,7 @@
       </div>
       <input type="submit" value="ログイン" class="btn btn-primary">
     </form>
+    </div>
   </div>
 </body>
 </html>
