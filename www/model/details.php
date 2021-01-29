@@ -40,18 +40,18 @@ function get_manage_details($db, $order_id){
   return fetch_all_query($db, $sql, [$order_id]);
 }
 
-function get_user_histories($db, $sql, $order_id, $user_id){
+function get_user_histories($db, $order_id, $user_id){
   $sql="
       SELECT 
         ec_histories.order_id, 
         created, 
         SUM(price * amount) AS total_amount
       FROM 
-          ec_historis
+          ec_histories
       JOIN 
           ec_details 
       ON 
-          ec_historis.order_id = ec_details.order_id
+          ec_histories.order_id = ec_details.order_id
       WHERE 
           ec_histories.order_id = ? AND user_id = ?
       GROUP BY 
@@ -67,11 +67,11 @@ function get_manage_histories($db,$order_id) {
         created, 
         SUM(price * amount) AS total_amount
       FROM 
-        ec_historis
+        ec_histories
       JOIN 
         ec_details 
       ON 
-        ec_historis.order_id = ec_details.order_id
+        ec_histories.order_id = ec_details.order_id
       WHERE 
         ec_histories.order_id = ?
       GROUP BY 

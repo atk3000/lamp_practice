@@ -13,7 +13,7 @@
   <div class="container">
     <?php include VIEW_PATH . 'templates/messages.php'; ?>
 
-    <?php if (count($histories) > 0) { ?>
+    <?php if (count($header) > 0) { ?>
       <table class="table table-bordered">
         <thead class="thead-light">
           <tr>
@@ -23,7 +23,7 @@
           </tr>
         </thead>
         <tbody>
-          <?php foreach ($histories as $history) { ?>
+          <?php foreach ($header as $history) { ?>
             <tr>
               <td><?php print(h($history['order_id'])); ?></td>
               <td><?php print(h($history['created'])); ?></td>

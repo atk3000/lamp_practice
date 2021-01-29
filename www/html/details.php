@@ -17,7 +17,7 @@ $order_id = get_post('order_id');
 
 if(is_admin($user) === false){
   $details = get_user_details($db,$order_id,$user['user_id']);
-  $header = get_user_histories($db,$user['user_id'],$order_id);
+  $header = get_user_histories($db,$order_id,$user['user_id']);
 } else {
   $details = get_manage_details($db,$order_id);
   $header = get_manage_histories($db,$order_id);
