@@ -41,6 +41,8 @@
       <?php } ?>
       </div>
     </div>
+    <h1>ランキング</h1>
+
     <div class="card-deck">
       <div class="row">
       <?php foreach($rankings as $ranking){ ?>
@@ -53,12 +55,12 @@
               <img class="card-img" src="<?php print(h(IMAGE_PATH . $ranking['image'])); ?>">
               <figcaption>
                 <?php print(h(number_format($ranking['price']))); ?>円
-                <?php print(h(number_format($ranking['amount']))); ?>円
-                <?php } ?>
+                <?php print(h(number_format($ranking['amount']))); ?>
               </figcaption>
             </figure>
           </div>
         </div>
+        <?php } ?>
       </div>
     </div>
   </div>

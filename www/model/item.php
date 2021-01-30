@@ -46,27 +46,26 @@ function get_items($db, $is_open = false){
 function get_rankings($db){
   $sql = '
   SELECT
-  items.item_id
+  items.item_id,
   items.name,
   items.price,
-  items.image,
-  ec_details.amount
-  SUM (ec_details.amount) AS 購入数
+  items.image
+  SUM(ec_details.amount) AS amount
 FROM
   ec_details
 JOIN
-  item
+  items
 ON
-  ec_details.item_id = item.item_id
+  ec_details.item_id = items.item_id
 GROUP BY
   items.item_id
 ORDER BY
-  ec_details.amount desc
+  SUM(ec_details.amount) desc
 LIMIT
   3
 ';
 
-return fetch_query($db, $sql);
+return fetch_all_query($db, $sql);
 }
 
 
