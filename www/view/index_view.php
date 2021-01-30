@@ -41,6 +41,28 @@
       <?php } ?>
       </div>
     </div>
+    <h1>ランキング</h1>
+
+    <div class="card-deck">
+      <div class="row">
+      <?php foreach($rankings as $ranking){ ?>
+        <div class="col-6 item">
+          <div class="card h-100 text-center">
+            <div class="card-header">
+              <?php print(h($ranking['name'])); ?>
+            </div>
+            <figure class="card-body">
+              <img class="card-img" src="<?php print(h(IMAGE_PATH . $ranking['image'])); ?>">
+              <figcaption>
+                <?php print(h(number_format($ranking['price']))); ?>円</br>
+                購入数：<?php print(h(number_format($ranking['amount']))); ?>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+        <?php } ?>
+      </div>
+    </div>
   </div>
   
 </body>

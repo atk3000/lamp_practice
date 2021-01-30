@@ -43,6 +43,32 @@ function get_items($db, $is_open = false){
   return fetch_all_query($db, $sql);
 }
 
+function get_rankings($db){
+  $sql = '
+  SELECT
+  items.item_id,
+  items.name,
+  items.price,
+  items.image,
+  SUM(ec_details.amount) AS amount
+FROM
+  ec_details
+JOIN
+  items
+ON
+  ec_details.item_id = items.item_id
+GROUP BY
+  items.item_id
+ORDER BY
+  SUM(ec_details.amount) desc
+LIMIT
+  3
+';
+
+return fetch_all_query($db, $sql);
+}
+
+
 function get_all_items($db){
   return get_items($db);
 }
@@ -50,6 +76,11 @@ function get_all_items($db){
 function get_open_items($db){
   return get_items($db, true);
 }
+
+function get_all_rankings($db){
+  return get_rankings($db);
+}
+
 
 function regist_item($db, $name, $price, $stock, $status, $image){
   $filename = get_upload_filename($image);
