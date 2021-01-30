@@ -56,7 +56,7 @@ FROM
 JOIN
   items
 ON
-  ec_details.item_id = item.item_id
+  ec_details.item_id = items.item_id
 GROUP BY
   items.item_id
 ORDER BY
