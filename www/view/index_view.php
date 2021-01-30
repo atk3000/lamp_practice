@@ -54,8 +54,8 @@
             <figure class="card-body">
               <img class="card-img" src="<?php print(h(IMAGE_PATH . $ranking['image'])); ?>">
               <figcaption>
-                <?php print(h(number_format($ranking['price']))); ?>円
-                <?php print(h(number_format($ranking['amount']))); ?>
+                <?php print(h(number_format($ranking['price']))); ?>円</br>
+                購入数：<?php print(h(number_format($ranking['amount']))); ?>
               </figcaption>
             </figure>
           </div>
